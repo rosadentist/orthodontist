@@ -336,6 +336,14 @@
       object-fit:cover;
       filter:saturate(.98) contrast(.98);
     }
+    /* Solo para logos/imagenes que NO deben recortarse */
+    .t-img img.fit-contain{
+      object-fit: cover;        /* llena el recuadro */
+      object-position: center;  /* centra el encuadre */
+      padding: 0;               /* sin margen interno */
+      background: transparent;
+    }
+
     .t-title{
       margin: 14px 0 10px;
       text-align:center;
@@ -420,6 +428,40 @@
       font-size: 13px;
       flex-wrap: wrap;
     }
+
+    .social{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+    .social-btn{
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.92);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .5px;
+      line-height: 1;
+      user-select: none;
+    }
+    .social-btn img{
+      width: 22px;
+      height: 22px;
+      display:block;
+      object-fit: contain;
+    }
+
+    .social-btn:hover{
+      background: rgba(255,255,255,.18);
+      border-color: rgba(255,255,255,.18);
+    }
+
 
     /* icons */
     .check{
@@ -700,13 +742,13 @@
         </div>
 
         <div class="t-item">
-          <div class="t-img"><img src="assets/Angel_Aligner.png" alt="Angel Aligner" /></div>
+          <div class="t-img"><img class="fit-contain" src="assets/Angel_Aligner.png" alt="Angel Aligner" /></div>
           <div class="t-title" data-i18n="services.s7.title">Angel Aligner</div>
           <p class="t-desc" data-i18n="services.s7.desc">Es un sistema de alineadores transparentes que combina tecnología digital avanzada con un enfoque clínico preciso. Permite tratar desde casos leves hasta moderados con alta predictibilidad, ofreciendo comodidad, estética y un control detallado de cada etapa del movimiento dental</p>
         </div>
 
         <div class="t-item">
-          <div class="t-img"><img src="assets/EON_Aligner.png" alt="EON Aligner" /></div>
+          <div class="t-img"><img class="fit-contain" src="assets/EON_Aligner.png" alt="EON Aligner" /></div>
           <div class="t-title" data-i18n="services.s6.title">EON Aligners</div>
           <p class="t-desc" data-i18n="services.s6.desc">Es una solución moderna de ortodoncia invisible diseñada para lograr resultados eficientes con alineadores cómodos y discretos. Su planificación digital facilita tratamientos personalizados, optimizando tiempos y asegurando una correcta alineación dental con mínima interferencia en la vida diaria del paciente</p>
         </div>
@@ -784,8 +826,9 @@
       <div class="footer-bottom">
         <span>© <span id="year"></span> <span data-i18n="brand">Dra. Rosa Gómez</span></span>
         <div class="social" aria-label="Redes sociales">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
+          <a class="social-btn" href="https://www.instagram.com/orthorosa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">  <img src="assets/Instagram.png" alt="" aria-hidden="true" /></a>
+          <a class="social-btn" href="https://www.tiktok.com/@rosa.gomez1837" target="_blank" rel="noopener noreferrer" aria-label="TikTok">  <img src="assets/Tiktok.png" alt="" aria-hidden="true" /></a>
+          <a class="social-btn" href="https://www.snapchat.com/" target="_blank" rel="noopener noreferrer" aria-label="Snapchat">  <img src="assets/Snapchat.png" alt="" aria-hidden="true" /></a>
         </div>
       </div>
     </section>
